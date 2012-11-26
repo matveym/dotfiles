@@ -107,6 +107,8 @@ let g:ctrlp_custom_ignore = {
 " Enable python folding
 let g:pymode_folding = 0
 
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
 " Wraps visual selection in an HTML tag
 vmap ,w <ESC>:call VisualHTMLTagWrap()<CR>
 function! VisualHTMLTagWrap()
