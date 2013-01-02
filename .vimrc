@@ -78,7 +78,7 @@ set diffopt+=iwhite " ignore whitespaces for diffs
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 " autocmd FileType python set omnifunc=pysmell#Complete
 autocmd FileType python set textwidth=90 tabstop=4 shiftwidth=4 softtabstop=4" PEP-8
-autocmd FileType html,js,mako,htmldjango set textwidth=0 tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType html,js,mako,htmldjango set textwidth=0 tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType ruby set textwidth=90 tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType lex set textwidth=255 tabstop=4 shiftwidth=4 softtabstop=4
 
@@ -101,13 +101,11 @@ let g:ctrlp_custom_ignore = {
     \ 'file': '\.pyc$',
     \ }
 
-" Configure python-mode
-" https://github.com/klen/python-mode
-"
-" Enable python folding
-let g:pymode_folding = 0
-
-highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+if has('gui_running')
+    map <C-[> :CtrlPBuffer<CR>
+else
+    let g:loaded_ctrlp = 1
+endif
 
 " Wraps visual selection in an HTML tag
 vmap ,w <ESC>:call VisualHTMLTagWrap()<CR>
@@ -151,4 +149,4 @@ map <leader>s :call ToggleScratch()<CR>
 
 let ropevim_vim_completion=1
 
-source ~/Projects/vimscripts/gotofile.vim
+" source ~/Projects/vimscripts/gotofile.vim
