@@ -102,7 +102,7 @@ let g:ctrlp_custom_ignore = {
     \ }
 
 if has('gui_running')
-    map <C-[> :CtrlPBuffer<CR>
+    " map <C-[> :CtrlPBuffer<CR>
 else
     let g:loaded_ctrlp = 1
 endif
