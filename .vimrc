@@ -97,12 +97,12 @@ syntax on
 
 " Configure ctrlp
 let g:ctrlp_custom_ignore = {
-    \ 'dir': 'env',
+    \ 'dir': 'env|node_modules',
     \ 'file': '\.pyc$',
     \ }
 
 if has('gui_running')
-    " map <C-[> :CtrlPBuffer<CR>
+    nmap b :CtrlPBuffer<CR>
 else
     let g:loaded_ctrlp = 1
 endif
